@@ -1,23 +1,16 @@
 {
   "name": "comp229-assignmen1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mhpro15/comp228-assignment1.git"
-  },
-  "author": "Hung Nguyen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mhpro15/comp228-assignment1/issues"
-  },
-  "homepage": "https://github.com/mhpro15/comp228-assignment1#readme",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.18.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
