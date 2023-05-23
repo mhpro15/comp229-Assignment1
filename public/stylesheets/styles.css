@@ -1,6 +1,8 @@
 body {
   background-color: #264653;
   color: #e9c46a;
+  width: 80%;
+  margin: 10px auto;
 }
 ul {
   list-style-type: none;
@@ -9,6 +11,7 @@ ul {
   overflow: hidden;
   background-color: #333;
   font-size: 1.3rem;
+  font-weight: bolder;
   border-radius: 10px;
 }
 
@@ -25,11 +28,78 @@ li a {
 }
 
 li a:hover:not(.active) {
+  background-color: #e9c46a;
+
+  color: #2a9d8f;
+
+}
+li.contact{
+  float:right
+}
+li.active a{
+  background-color: #2a9d8f;
+  color: #e6c01a;
+  font-weight: bold;
+}
+.logo{
+  display: block;
+  padding: 9.8px 50px;
+  font-size: 2rem;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
   background-color: #e76f51;
   color: #264653;
+
+}
+.logo:hover{
+  cursor: not-allowed;
 }
 
-.active {
-  background-color: #2a9d8f;
-  color: #e9c46a;
+
+
+#navbar{
+  margin: 20px auto;
+  min-width: 650px;
+  max-width: 1500px;
+}
+
+footer{
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  ul {
+    font-size: 1rem;
+  }
+  li, li.contact{
+    float: none;
+  }
+  .logo{
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  #navbar{
+    min-width: 60%;
+  }
+}
+
+main{
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  line-height: 1.5rem;
+}
+
+blockquote a {
+  text-decoration: none;
+  color: #e76f51;
+  float: right;
+}
+
+fieldset{
+  margin: 30px auto;
+  max-width: 1200px;
 }
