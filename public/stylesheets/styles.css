@@ -70,7 +70,7 @@ footer{
 
 @media (max-width: 700px) {
   ul {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   li, li.contact{
     float: none;
@@ -81,6 +81,15 @@ footer{
   }
   #navbar{
     min-width: 60%;
+  }
+}
+
+@media (max-width: 900px) {
+  ul {
+    font-size: 1.2rem;
+  }
+  .logo{
+    padding: 9.8px 20px;
   }
 }
 
