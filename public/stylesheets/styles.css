@@ -1,9 +1,13 @@
+/* Body styles */
 body {
   background-color: #264653;
   color: #e9c46a;
   width: 80%;
   margin: 10px auto;
+  font-family: 'Times New Roman', Times, serif;
 }
+
+/* Navbar styles */
 ul {
   list-style-type: none;
   margin: 0;
@@ -29,19 +33,23 @@ li a {
 
 li a:hover:not(.active) {
   background-color: #e9c46a;
-
   color: #2a9d8f;
+}
 
+/* Contact Me link style */
+li.contact {
+  float: right;
 }
-li.contact{
-  float:right
-}
-li.active a{
+
+/* Active link style */
+li.active a {
   background-color: #2a9d8f;
   color: #e6c01a;
   font-weight: bold;
 }
-.logo{
+
+/* Logo styles */
+.logo {
   display: block;
   padding: 9.8px 50px;
   font-size: 2rem;
@@ -49,37 +57,39 @@ li.active a{
   font-family: 'Press Start 2P', cursive;
   background-color: #e76f51;
   color: #264653;
-
 }
-.logo:hover{
+
+.logo:hover {
   cursor: not-allowed;
 }
 
-
-
-#navbar{
+/* Navbar container styles */
+#navbar {
   margin: 20px auto;
   min-width: 650px;
   max-width: 1500px;
 }
 
-footer{
+/* Footer styles */
+footer {
   text-align: center;
   margin-top: 40px;
 }
 
+/* Responsive styles */
 @media (max-width: 700px) {
   ul {
     font-size: 1.3rem;
   }
-  li, li.contact{
+  li,
+  li.contact {
     float: none;
   }
-  .logo{
+  .logo {
     font-size: 1.5rem;
     text-align: center;
   }
-  #navbar{
+  #navbar {
     min-width: 60%;
   }
 }
@@ -88,12 +98,13 @@ footer{
   ul {
     font-size: 1.2rem;
   }
-  .logo{
+  .logo {
     padding: 8.8px 20px;
   }
 }
 
-main{
+/* Main content styles */
+main {
   width: 90%;
   max-width: 1200px;
   margin: 50px auto;
@@ -102,13 +113,88 @@ main{
   line-height: 1.5rem;
 }
 
-blockquote a {
+/* Common styles */
+a {
   text-decoration: none;
+}
+
+/* Blockquote styles */
+blockquote a.project-link {
   color: #e76f51;
   float: right;
 }
 
-fieldset{
+/* Fieldset styles */
+fieldset {
   margin: 30px auto;
   max-width: 1200px;
+}
+
+/* Profile picture styles */
+.profile-pic {
+  text-align: center;
+  margin: 10px auto;
+}
+
+img {
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+  overflow: auto;
+  border-style: outset;
+  border-color: #e6c01a;
+  transition: 500ms;
+}
+
+img:hover {
+  cursor: not-allowed;
+  border-style: inset;
+  border-color: #e251e7;
+  transform: scale(1.02);
+  transition: 500ms;
+}
+
+/* Resume link styles */
+a.resume-link {
+  display: inline;
+  color: #e76f51;
+}
+
+/* Form styles */
+form {
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 150px;
+}
+
+input {
+  background-color: inherit;
+  color: #fff;
+  border-style: solid;
+  width: 300px;
+}
+
+input,
+textarea,
+button {
+  border-color: #eeeeee;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+  border-color: #e6c01a;
+  width: 100px;
+}
+
+button:hover {
+  border-color: #e61a57;
+  font-weight: bolder;
 }

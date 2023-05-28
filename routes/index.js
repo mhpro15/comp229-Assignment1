@@ -22,8 +22,12 @@ router.get("/home", function (req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('index', {
     greeting: "About Me",
+    url: ["./images/profile.png","./documents/resume.pdf"],
     title: 'About',
-    content:["Please find my detailed resume in PDF format for a comprehensive overview of my education, skills, and professional experience. You can download it here: "] ,
+    content: ["My name is Hung Nguyen and I am a Software Engineering Technology student at Centennial College.",
+      "I enjoy playing video games, listening to music, and building wholesome projects in my freetime.",
+      "I am currently seeking an intership position as a Software Developer or Web Developer. If you are interested in working with me, please feel free to contact me at any time.",
+      "Please find my detailed resume in PDF format for a comprehensive overview of my education, skills, and professional experience. You can download it here: "],
   });
 });
 /* GET Projects page. */
@@ -44,11 +48,17 @@ router.get('/projects', function(req, res, next) {
 /* GET Services page. */
 router.get('/services', function(req, res, next) {
   res.render('index', { 
-    greeting: "What I can offer:",title: 'Services', content:["Front-end Development: Building modern and responsive websites tailored to your requirements.","Back-end Development: Creating robust and scalable web applications with a focus on security and performance.","API Development: Building RESTful APIs to allow your applications to communicate with each other."] });
+    greeting: "What I can offer:",
+    title: 'Services',
+    content: ["Front-end Development: Building modern and responsive websites tailored to your requirements.",
+      "Back-end Development: Creating robust and scalable web applications with a focus on security and performance.",
+      "API Development: Building RESTful APIs to allow your applications to communicate with each other.",
+      "My Stacks: Python, Java, C#, HTML, CSS, JavaScript, React, Node.js, Next.js, Express, MongoDB, MySQL, Git, Heroku, Tailwind CSS, and more."],
+  });
 });
 
 router.get("/contact", function (req, res, next) {
-  res.send("Coming Soon!");
+  res.render("contact",{title: 'Contact Me'});
 });
 
 module.exports = router;

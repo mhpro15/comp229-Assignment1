@@ -1,0 +1,33 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/navbar.ejs %>
+
+<main>
+  <h1>Contact Me</h1>
+  <form action="/">
+    <!-- First Name input -->
+    <label for="firstName">First Name:</label> 
+    <input type="text" id="firstName" name="firstName" required><br>
+
+    <!-- Last Name input -->
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br>
+
+    <!-- Contact Number input -->
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" name="contactNumber" required><br>
+
+    <!-- Email Address input -->
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <!-- Message input -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+  </form>
+</main>
+
+<%- include partials/footer.ejs %>

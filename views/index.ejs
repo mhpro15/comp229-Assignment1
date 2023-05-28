@@ -5,19 +5,30 @@
 <main>
         <h1><%= greeting%></h1>
         <blockquote >
+          <% if (title == "About") { %>
+                <div class="profile-pic">
+                  <img src=<%= url[0]%> alt="profile picture">
+                </div>
+          <% } %>
           <% content.forEach((element,index) => { %>
-           
-             <% if (title == "Projects") { %>
-               <fieldset>
-              <legend><%= project[index]%></legend>
-              <blockquote><p><%= element%></p></blockquote>
-             
-                <a href=<%= website[index]%> target="_blank">Visit Website</a>
-                 </fieldset>
-                   <% } else  { %>
-          <p><%= element%></p>
-            <% } %>
+                    
+                <% if (title == "Projects") { %>
+
+                  <fieldset>
+                  <legend><%= project[index]%></legend>
+                  <blockquote><p><%= element%></p></blockquote>
+                    <a class="project-link" href=<%= website[index]%> target="_blank">Visit Website</a>
+                  </fieldset>
+
+                      <% } else  { %>
+
+                        <p><%= element%></p>
+                      <% } %>
           <% }) %>
+          <% if (title == "About") { %>
+               You can download it here: <a class="resume-link" href=<%= url[1]%> target="_blank">Click Here</a>
+          <% } %>
+          
          </blockquote>
 
       </main>
