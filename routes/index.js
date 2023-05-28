@@ -27,7 +27,7 @@ router.get('/about', function(req, res, next) {
     content: ["My name is Hung Nguyen and I am a Software Engineering Technology student at Centennial College.",
       "I enjoy playing video games, listening to music, and building wholesome projects in my freetime.",
       "I am currently seeking an intership position as a Software Developer or Web Developer. If you are interested in working with me, please feel free to contact me at any time.",
-      "Please find my detailed resume in PDF format for a comprehensive overview of my education, skills, and professional experience. You can download it here: "],
+      "Please find my detailed resume in PDF format for a comprehensive overview of my education, skills, and professional experience."],
   });
 });
 /* GET Projects page. */
