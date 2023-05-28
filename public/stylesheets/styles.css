@@ -77,7 +77,10 @@ footer {
 }
 
 /* Responsive styles */
-@media (max-width: 700px) {
+@media (max-width: 750px) {
+  h1{
+    line-height: 110%;
+  }
   ul {
     font-size: 1.3rem;
   }
@@ -91,12 +94,16 @@ footer {
   }
   #navbar {
     min-width: 60%;
+    max-width: 80%;
+  }
+  body{
+    width: 100%;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   ul {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .logo {
     padding: 8.8px 20px;
