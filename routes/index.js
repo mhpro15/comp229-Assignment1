@@ -46,4 +46,9 @@ router.get('/services', function(req, res, next) {
   res.render('index', { 
     greeting: "What I can offer:",title: 'Services', content:["Front-end Development: Building modern and responsive websites tailored to your requirements.","Back-end Development: Creating robust and scalable web applications with a focus on security and performance.","API Development: Building RESTful APIs to allow your applications to communicate with each other."] });
 });
+
+router.get("/contact", function (req, res, next) {
+  res.send("Coming Soon!");
+});
+
 module.exports = router;
