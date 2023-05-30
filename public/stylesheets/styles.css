@@ -35,11 +35,14 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: 500ms;
 }
 
 li a:hover:not(.active) {
   background-color: #e9c46a;
   color: #2a9d8f;
+  border-radius: 10px ;
+  transition: 500ms;
 }
 
 /* Contact Me link style */
