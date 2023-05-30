@@ -114,6 +114,12 @@ footer {
   .logo {
     padding: 8.8px 20px;
   }
+  .flex-container{
+    flex-direction: column;
+  }
+  .flex-item{
+    flex: 100%;
+  }
 }
 
 /* Main content styles */
@@ -202,6 +208,7 @@ h1.collab{
 /* Contact-info styles */
 .contact-info{
   line-height: 1.7rem;
+  margin-bottom: 50px;
 }
 
 /* Form styles */
