@@ -187,6 +187,7 @@ a.resume-link {
   max-width: 1200px;
 }
 .flex-item{
+  padding: 10px;
   flex: 50%;
 }
 h1.collab{
