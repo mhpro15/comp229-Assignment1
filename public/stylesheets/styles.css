@@ -173,23 +173,45 @@ a.resume-link {
   color: #e76f51;
 }
 
-/* Form styles */
-form {
-  margin: 50px auto;
+
+/* Flex box styles */
+.flex-container {
+  display: flex;
+  margin: 80px auto;
   max-width: 1200px;
 }
-
-label {
-  display: inline-block;
-  margin-bottom: 15px;
-  width: 150px;
+.flex-item{
+  flex: 50%;
+}
+h1.collab{
+  text-align: center;
+}
+.contact-link{
+  font-weight: bolder;
+  text-decoration: none;
+  color: #fff;
 }
 
+.flex-item > h3{
+  margin-top: 0;
+}
+.highlight{
+  color: #5ee751;
+}
+
+/* Contact-info styles */
+.contact-info{
+  line-height: 1.7rem;
+}
+
+/* Form styles */
 input {
+  display: block;
   background-color: inherit;
   color: #fff;
   border-style: solid;
-  width: 300px;
+  width: 80%;
+  margin-top: 5px;
 }
 
 input,
@@ -210,4 +232,8 @@ button {
 button:hover {
   border-color: #e61a57;
   font-weight: bolder;
+}
+
+.required{
+  color: #e61a57;
 }

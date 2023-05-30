@@ -3,31 +3,56 @@
 <%- include partials/navbar.ejs %>
 
 <main>
-  <h1>Contact Me</h1>
-  <form action="/">
+  <h1 class="collab">Let's start collaborate!</h1>
+  <div class="flex-container">
+    <div class="contact-info flex-item">
+      <h3>Hung Nguyen - <span class="highlight">Hiro</span></h3>
+     <p>
+      <a class="contact-link" href="https://www.linkedin.com/in/hung-nguyen1206/" target="_blank">Linkedin</a>&nbsp;
+      <a class="contact-link" href="https://github.com/mhpro15?tab=repositories" target="_blank">Github</a> <br>
+      <a class="contact-link" href="https://resume-mhpro15.vercel.app" target="_blank"><span class="highlight"> Another Porfolio Website</span></a><br>
+      Email: <a class="contact-link" href="mailto: nguyenmanhhungpro15@gmail.com" target="_blank">nguyenmanhhungpro15@gmail.com</a> <br>
+      Phone: 416-***-****<br>
+      CENTENNIAL COLLEGE<br>
+      941 Progress Ave<br>
+      Scarborough, ON<br>
+      M1G 3T8 <br>
+     </p>
+    </div>
+    <div class="form-container flex-item">
+      <form action="/">
     <!-- First Name input -->
-    <label for="firstName">First Name:</label> 
+    <label for="firstName">First Name:<span class="required">*</span></label> 
     <input type="text" id="firstName" name="firstName" required><br>
 
     <!-- Last Name input -->
-    <label for="lastName">Last Name:</label>
+    <label for="lastName">Last Name:<span class="required">*</span></label>
     <input type="text" id="lastName" name="lastName" required><br>
 
     <!-- Contact Number input -->
-    <label for="contactNumber">Contact Number:</label>
+    <label for="contactNumber">Contact Number:<span class="required">*</span></label>
     <input type="tel" id="contactNumber" name="contactNumber" required><br>
 
     <!-- Email Address input -->
-    <label for="email">Email Address:</label>
+    <label for="email">Email Address:<span class="required">*</span></label>
     <input type="email" id="email" name="email" required><br>
 
+    <!-- Company input -->
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" name="company"><br>
+
+
     <!-- Message input -->
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+    <label for="message">Message:<span class="required">*</span></label><br>
+    <textarea id="message" name="message" rows="4" cols="45" required></textarea><br>
 
     <!-- Submit button -->
     <button type="submit">Submit</button>
   </form>
+</div>
+
+  </div>
+ 
 </main>
 
 <%- include partials/footer.ejs %>
