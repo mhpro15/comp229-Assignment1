@@ -39,6 +39,15 @@
       <a class="nav-link" href="/projects">Projects</a>
     </li>
 
+    <!-- Projects link -->
+    <% if (title == "Login") { %>
+      <li class="nav-item active">
+    <% } else  { %>
+      <li class="nav-item">
+    <% } %>
+      <a class="nav-link" href="/login">Login</a>
+    </li>
+
     <!-- Contact Me link -->
     <% if (title == "Contact Me") { %>
       <li class="nav-item active contact">

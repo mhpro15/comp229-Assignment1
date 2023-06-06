@@ -1,0 +1,27 @@
+<%- include ../partials/header.ejs %> 
+<%- include ../partials/navbar.ejs %>
+<main>
+    <div>
+        <h2>Business Contact List</h2>
+        <table class="table ">
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone Number</th>
+                    <th class="text-center">Email</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                    <% contactList.forEach((contact) => { %>
+                        <tr>
+                        <td><%= contact.name %></td>
+                        <td><%= contact.number %></td>
+                        <td><%= contact.email %></td>
+                        <td><a href="./contact-list/edit/<%= contact._id%>" class="btn btn-secondary">Edit</a></td>
+                        <td><a href="./contact-list/delete/<%= contact._id %>" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    <% }); %>
+                
+            </table>
+    </div>
+</main>
+<%- include ../partials/footer.ejs %>
