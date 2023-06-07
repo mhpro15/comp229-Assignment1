@@ -9,14 +9,22 @@ var router = express.Router();
 
 let businessContactsController = require("../controllers/contacts");
 
-router.get("/", businessContactsController.displayHomePage);
+
+const isLoggedIn = (req, res, next) => {
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
+router.get("/", isLoggedIn, businessContactsController.displayHomePage);
 
 router.post("/add", businessContactsController.processAddPage);
 
-router.get("/update/:id", businessContactsController.displayUpdatePage);
+router.get("/update/:id",isLoggedIn, businessContactsController.displayUpdatePage);
 
-router.post("/update/:id", businessContactsController.processUpdatePage);
+router.post("/update/:id",isLoggedIn, businessContactsController.processUpdatePage);
 
-router.get("/delete/:id", businessContactsController.processDeletePage);
+router.get("/delete/:id",isLoggedIn, businessContactsController.processDeletePage);
 
 module.exports = router;

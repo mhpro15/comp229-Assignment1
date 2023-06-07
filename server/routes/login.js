@@ -5,10 +5,18 @@
 */
 var express = require("express");
 var router = express.Router();
+let loginController = require("../controllers/login");
+let passport = require("passport")
 
-router.get("/", function (req, res, next) {
-    res.render("login", { title: "Login" });
+const isLoggedIn = (req, res, next) => {
+    if(req.isAuthenticated()){
+        return res.redirect("../contact-list");
+    }
+    else {
+        return next();
+    }
 }
-);
+router.get("/" , isLoggedIn, loginController.displayLoginPage); 
+router.post("/",loginController.procesLoginPage);
 
 module.exports = router;

@@ -1,15 +1,20 @@
+const e = require("express");
 let Contact = require("../modules/contact");
 
 
 
 
 module.exports.displayHomePage = async(req, res, next) => {
-  
-  try {
-    let contactList = await Contact.find();
-    res.render("contact-list/list", {title: 'Business Contacts', contactList: contactList});
-  } catch (err) {
-    console.error(err);
+  if (req.isAuthenticated()) {
+    try {
+      let contactList = await Contact.find();
+      res.render("contact-list/list", { title: 'Business Contacts', contactList: contactList });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  else {
+    res.redirect("/login");
   }
 }
 

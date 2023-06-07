@@ -9,13 +9,14 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require('mongoose');
+var contactListRouter = require("../routes/contact-list");
 const session = require('express-session');
 const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 var indexRouter = require("../routes/index");
 var loginRouter = require("../routes/login");
-var contactListRouter = require("../routes/contact-list");
 
 let DB = require('./db');
 
@@ -36,39 +37,42 @@ app.set("view engine", "ejs");
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
-// app.use(session({
-//   secret: "SomeSecret",
-//   saveUninitialized: false,
-//   resave: false
-// }));
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+const User = require('../modules/userModel');
 
-// const userSchema = new mongoose.Schema({ 
-//   username: String,
-//   password: String
-// });
+passport.use(new LocalStrategy(User.authenticate()));
 
-// userSchema.plugin(passportLocalMongoose);
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// const User = mongoose.model('User', userSchema);
-
-// passport.use(User.createStrategy());
-
-// passport.serializeUser(User.serializeUser());
-
-// passport.deserializeUser(User.deserializeUser());
 
 app.use("/", indexRouter);
-app.use("/login", loginRouter);
-app.use("/contact-list", contactListRouter);
 
+app.use("/contact-list", contactListRouter);
+app.use("/login", loginRouter);
+
+// app.get("/login", (req, res, next) => {
+//     res.render("login", { title: "Login" });
+// });
+
+// app.post("/login", passport.authenticate("local", {
+//   successRedirect: "../contact-list",
+//   failureRedirect: "/login"
+// }), function (req, res) {
+ 
+// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
