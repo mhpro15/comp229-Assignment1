@@ -8,8 +8,10 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const mongoose  = require('mongoose');
-
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 var indexRouter = require("../routes/index");
 var loginRouter = require("../routes/login");
@@ -38,6 +40,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
+
+// app.use(session({
+//   secret: "SomeSecret",
+//   saveUninitialized: false,
+//   resave: false
+// }));
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// const userSchema = new mongoose.Schema({ 
+//   username: String,
+//   password: String
+// });
+
+// userSchema.plugin(passportLocalMongoose);
+
+// const User = mongoose.model('User', userSchema);
+
+// passport.use(User.createStrategy());
+
+// passport.serializeUser(User.serializeUser());
+
+// passport.deserializeUser(User.deserializeUser());
 
 app.use("/", indexRouter);
 app.use("/login", loginRouter);

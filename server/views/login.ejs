@@ -1,10 +1,11 @@
 <%- include partials/header.ejs %> <%- include partials/navbar.ejs %>
 
-<div >
-    <form action="POST" class="login-container">
+<div class="login-container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
         <input type="text" name="username" id="username" placeholder="Username">
         <input type="password" name="password" id="password" placeholder="Password">
-    <input type="submit" value="Login Now" type="submit" class="loginBtn">
+    <button type="submit" class="loginBtn">Login Now</button>
     
     </form>
     

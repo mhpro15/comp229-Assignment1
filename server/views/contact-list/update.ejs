@@ -1,0 +1,22 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/navbar.ejs %>
+
+<div class="edit-container">
+    <h1>Update contact</h1>
+    <form action="./<%=contact._id%>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%=contact.name%>">
+        <br>
+        <label for="number">Number:</label>
+        <input type="text" name="number" value="<%=contact.number%>">
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email"  value="<%=contact.email%>">
+
+       
+    <button type="submit" class="updateBtn">Update</button>
+    
+    </form>
+    
+</div>
+
+<%- include ../partials/footer.ejs %>

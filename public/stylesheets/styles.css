@@ -216,7 +216,7 @@ h1.collab{
 }
 
 /* Form styles */
-input {
+div.form-container > form > input {
   display: block;
   background-color: inherit;
   color: #fff;
@@ -230,7 +230,7 @@ textarea,
 button {
   border-color: #eeeeee;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 0;
   font-size: 1.2rem;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -247,4 +247,132 @@ button:hover {
 
 .required{
   color: #e61a57;
+}
+
+div.contact-list-container{
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+div.contact-list-container > h2{
+  text-align: center;
+}
+
+table.contact-table{
+  padding: 10px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  background-color: #fff;
+  color: #000;
+}
+
+table.contact-table th{
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #e6c01a;
+  color: #000;
+  height: 3rem;
+}
+
+table.contact-table td{
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px ;
+  background-color: #fff;
+  color: #000;
+}
+
+div.login-container{
+  margin: 20% auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+div.login-container > h1{
+  text-align: center;
+}
+
+div.login-container > form {
+  margin: 10px auto;
+  width: 80%;
+}
+
+div.login-container > form > input{
+  margin: 10px auto;
+  padding-left: 5px;
+  height: 1.5rem;
+  width: 100%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+div.login-container > form > button.loginBtn
+{
+  margin: 10px auto;
+  width: 102%;
+  border-radius: 10px;
+  background-color: #e6c01a;
+  color: #000;
+}
+
+div.login-container > form > button.loginBtn:hover{
+  border-color: #000;
+  font-weight: bolder;
+}
+
+
+div.edit-container  > form
+{
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+
+}
+
+div.edit-container  
+{
+  margin: 10px auto;
+  padding-left: 5px;
+  max-width: 800px;
+}
+
+div.edit-container > form > input{
+  display: block;
+  background-color: inherit;
+  color: #000;
+  border-style: solid;
+  width: 80%;
+  margin:  auto;
+}
+
+div.edit-container > form > button.updateBtn
+{
+  margin: 10px auto;
+  width: 100px;
+  border-radius: 10px;
+  background-color: #e6c01a;
+  color: #000;
+}
+
+div.edit-container > form > button:hover{
+  border-color: #000;
+  font-weight: bolder;
+}
+
+div.edit-container > form > label{
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
