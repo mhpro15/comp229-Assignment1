@@ -2,7 +2,8 @@ const passport = require("passport");
 
 const User = require('../modules/userModel');
 module.exports.displayLoginPage = async (req, res, next) => {
-    let foundUser = await User.findOne({ "username": "admin" }) 
+    try {
+         let foundUser = await User.findOne({ "username": "admin" }) 
     console.log(foundUser);
     if (foundUser == null) {
             User.register(new User({ username: "admin" }), "password", (err, user) => {
@@ -10,6 +11,10 @@ module.exports.displayLoginPage = async (req, res, next) => {
             });
         
     }
+    } catch (error) {
+        console.error(error);
+    }
+   
     res.render("login", { title: "Login" });
 }
 
