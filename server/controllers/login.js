@@ -13,7 +13,6 @@ module.exports.displayLoginPage = async (req, res, next) => {
     } catch (error) {
         console.error(error);
     }
-   
     res.render("login", { title: "Login" });
 }
 
