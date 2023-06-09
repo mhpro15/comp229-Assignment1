@@ -14,13 +14,14 @@ const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
+require('dotenv').config();
 
 var indexRouter = require("../routes/index");
 var loginRouter = require("../routes/login");
 
 let DB = require('./db');
 
-mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let mongoDB = mongoose.connection;
 

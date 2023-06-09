@@ -26,7 +26,7 @@ module.exports.processAddPage = async (req, res, next) => {
   });
   try {
     await newContact.save();
-    res.redirect("/contact-list");
+    res.redirect("/");
   } catch (err) {
     console.error(err);
   }
