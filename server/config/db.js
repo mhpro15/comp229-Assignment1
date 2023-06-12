@@ -4,5 +4,5 @@
     May 30
 */
 module.exports = {
-    "URI": "mongodb://localhost/businessContacts",
+    "URI": "mongodb://localhost/businessContacts","Secret": 'SomeSecret'
 }

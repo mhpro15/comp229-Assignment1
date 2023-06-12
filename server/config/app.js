@@ -15,9 +15,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const passportLocalMongoose = require('passport-local-mongoose');
 require('dotenv').config();
+let passportJWT = require('passport-jwt');
+let JWTStrategy = passportJWT.Strategy;
+let ExtractJWT = passportJWT.ExtractJwt;
 
-var indexRouter = require("../routes/index");
-var loginRouter = require("../routes/login");
+let flash = require('connect-flash');
 
 let DB = require('./db');
 
@@ -29,6 +31,9 @@ mongoDB.on('error', console.error.bind(console, 'Connection Error: '));
 mongoDB.once('open', () => {
   console.log('Connected to MongoDB...');
 });
+
+var indexRouter = require("../routes/index");
+var loginRouter = require("../routes/login");
 
 var app = express();
 
@@ -48,21 +53,21 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }));
+
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-const User = require('../modules/userModel');
-
-passport.use(new LocalStrategy(User.authenticate()));
+let userModel = require('../modules/userModel');
+let User = userModel.User;
+passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-app.use("/", indexRouter);
 
-app.use("/contact-list", contactListRouter);
-app.use("/login", loginRouter);
 
 // app.get("/login", (req, res, next) => {
 //     res.render("login", { title: "Login" });
@@ -74,6 +79,28 @@ app.use("/login", loginRouter);
 // }), function (req, res) {
  
 // });
+
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey = DB.Secret;
+
+let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
+  User.findById(jwt_payload.id)
+    .then(user => {
+      return done(null, user);
+    })
+    .catch(err => {
+      return done(err, false);
+    });
+});
+
+passport.use(strategy);
+
+
+app.use("/", indexRouter);
+
+app.use("/contact-list", contactListRouter);
+app.use("/login", loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
