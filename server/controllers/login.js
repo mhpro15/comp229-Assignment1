@@ -12,7 +12,6 @@ let User = userModel.User; // alias
 module.exports.displayLoginPage = async (req, res, next) => {
     try {
         let foundUser = await User.findOne({ "username": "admin" }) 
-        console.log(foundUser);
         if (foundUser == null) {
                 User.register(new User({ username: "admin" }), "password", (err, user) => {
                 console.log("User registered");
