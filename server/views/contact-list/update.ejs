@@ -13,7 +13,10 @@
         <input type="text" name="email"  value="<%=contact.email%>">
 
        
-    <button type="submit" class="updateBtn">Update</button>
+    <button type="submit" class="updateBtn updatebtn">Update</button>
+   <button class="updateBtn deleteBtn"><a href="/contact-list/delete/<%=contact._id%>">Delete</a></button>
+    <button class="updateBtn cancelBtn"><a href="/contact-list">Cancel</a></button>
+    
     
     </form>
     

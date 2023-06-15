@@ -1,3 +1,9 @@
+/*  register.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
+
 const passport = require("passport");
 let DB = require('../config/db');
 

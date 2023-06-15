@@ -1,4 +1,4 @@
-/*  index.js
+/*  contact-list.js
     Hung Nguyen
     301294266 
     May 30

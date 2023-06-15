@@ -1,4 +1,8 @@
-
+/*  content.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
 module.exports  = content = {
    homeContent :  { 
     greeting: "Welcome to my portfolio!",

@@ -1,3 +1,9 @@
+/*  userModel.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
+
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 

@@ -1,4 +1,8 @@
-
+/*  contacts.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
 let Contact = require("../modules/contact");
 
 
@@ -7,7 +11,7 @@ let Contact = require("../modules/contact");
 module.exports.displayHomePage = async(req, res, next) => {
   if (req.isAuthenticated()) {
     try {
-      let contactList = await Contact.find();
+      let contactList = await Contact.find().sort({name:1});
       res.render("contact-list/list", { title: 'Business Contacts', contactList: contactList, displayName: req.user ? req.user.displayName : '' });
     } catch (err) {
       console.error(err);

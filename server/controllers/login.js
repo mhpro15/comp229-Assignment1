@@ -1,3 +1,9 @@
+/*  login.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
+
 const passport = require("passport");
 
 let jwt = require('jsonwebtoken');

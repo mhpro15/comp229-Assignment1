@@ -424,7 +424,7 @@ div.edit-container > form > button.updateBtn
   margin: 10px auto;
   width: 100px;
   border-radius: 10px;
-  background-color: #e6c01a;
+  background-color: #43e61a;
   color: #000;
 }
 
@@ -436,4 +436,18 @@ div.edit-container > form > button:hover{
 div.edit-container > form > label{
   font-weight: bolder;
   font-size: 1.5rem;
+}
+
+div.edit-container > form > button.deleteBtn{
+  background-color: #e61a57;
+}
+
+div.edit-container > form > button.cancelBtn{
+  background-color: #e6e31a;
+}
+
+div.edit-container > form> button> a 
+{
+  color: #000;
+  text-decoration: none;
 }

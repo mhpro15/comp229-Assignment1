@@ -1,3 +1,8 @@
+/*  index.js
+    Hung Nguyen
+    301294266 
+    June 15
+*/
 let content = require("../modules/content");
 
 

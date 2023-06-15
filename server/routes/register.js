@@ -1,7 +1,7 @@
-/*  index.js
+/*  register.js
     Hung Nguyen
     301294266 
-    May 30
+    June 15
 */
 var express = require("express");
 var router = express.Router();
