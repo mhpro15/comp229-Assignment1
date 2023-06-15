@@ -5,7 +5,7 @@
 */
 var express = require("express");
 var router = express.Router();
-let loginController = require("../controllers/login");
+let registerController = require("../controllers/register");
 let passport = require("passport")
 
 const isLoggedIn = (req, res, next) => {
@@ -16,7 +16,8 @@ const isLoggedIn = (req, res, next) => {
         return next();
     }
 }
-router.get("/" , isLoggedIn, loginController.displayLoginPage); 
-router.post("/",loginController.processLoginPage);
+
+router.get("/" ,isLoggedIn, registerController.displayRegisterPage); 
+router.post("/",registerController.processRegisterPage);
 
 module.exports = router;

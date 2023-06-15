@@ -1,7 +1,5 @@
 const passport = require("passport");
 
-
-
 let jwt = require('jsonwebtoken');
 let DB = require('../config/db');
 
@@ -10,20 +8,10 @@ let User = userModel.User; // alias
 
 
 module.exports.displayLoginPage = async (req, res, next) => {
-    try {
-        let foundUser = await User.findOne({ "username": "admin" }) 
-        if (foundUser == null) {
-                User.register(new User({ username: "admin" }), "password", (err, user) => {
-                console.log("User registered");
-            });
-    }
-    } catch (error) {
-        console.error(error);
-    }
-    res.render("login", { title: "Login" });
+    res.render("auth/login", { title: "Login", displayName: req.user ? req.user.displayName : ''});
 }
 
-module.exports.procesLoginPage = (req, res, next) => {
+module.exports.processLoginPage = (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
         // server err?
         if (err) {

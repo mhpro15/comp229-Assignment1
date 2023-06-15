@@ -19,6 +19,8 @@ const isLoggedIn = (req, res, next) => {
 
 router.get("/", isLoggedIn, businessContactsController.displayHomePage);
 
+router.get("/add", isLoggedIn, businessContactsController.displayAddPage);
+
 router.post("/add", businessContactsController.processAddPage);
 
 router.get("/update/:id",isLoggedIn, businessContactsController.displayUpdatePage);

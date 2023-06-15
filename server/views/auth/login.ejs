@@ -1,14 +1,16 @@
-<%- include partials/header.ejs %> <%- include partials/navbar.ejs %>
+<%- include ../partials/header.ejs %> 
+<%- include ../partials/navbar.ejs %>
 
 <div class="login-container">
     <h1>Login</h1>
     <form action="./login" method="POST">
         <input type="text" name="username" id="username" placeholder="Username">
         <input type="password" name="password" id="password" placeholder="Password">
+        <p><a href="/register" class="register-link">Regsiter Now!</a></p>
     <button type="submit" class="loginBtn">Login Now</button>
     
     </form>
     
 </div>
 
-<%- include partials/footer.ejs %>
+<%- include ../partials/footer.ejs %>

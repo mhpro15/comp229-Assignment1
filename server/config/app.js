@@ -9,7 +9,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require('mongoose');
-var contactListRouter = require("../routes/contact-list");
+
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -34,6 +34,8 @@ mongoDB.once('open', () => {
 
 var indexRouter = require("../routes/index");
 var loginRouter = require("../routes/login");
+var contactListRouter = require("../routes/contact-list");
+var registerRouter = require("../routes/register");
 
 var app = express();
 
@@ -101,7 +103,7 @@ app.use("/", indexRouter);
 
 app.use("/contact-list", contactListRouter);
 app.use("/login", loginRouter);
-
+app.use("/register", registerRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -115,7 +117,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error", { title: "Error" });
+  res.render("error", { title: "Error" , displayName: req.user ? req.user.displayName : ''});
 });
 
 module.exports = app;

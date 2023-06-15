@@ -4,7 +4,7 @@ module.exports  = content = {
     greeting: "Welcome to my portfolio!",
   title: "Home",
   content: ["Here, you will find a showcase of my skills, projects, and experiences in the field of software engineering. I invite you to explore and learn more about me and my work.","I am dedicated to delivering high-quality software solutions and leveraging cutting-edge technologies to create innovative and user-centric applications. My goal is to contribute to the advancement of technology and make a positive impact in the digital world."]
-} ,
+  },
 
  aboutContent : {
   greeting: "About Me",
